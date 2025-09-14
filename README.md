@@ -30,7 +30,7 @@ npm install
 # Inicie o servidor de desenvolvimento
 npm run dev
 
----
+````
 ## 🛠️ Tecnologias utilizadas
 
 - [React](https://reactjs.org/) — Biblioteca JavaScript para construção de interfaces
