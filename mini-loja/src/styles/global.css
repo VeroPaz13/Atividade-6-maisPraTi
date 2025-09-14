@@ -1,0 +1,191 @@
+:root {
+  --bg-light: #f9f9f9;
+  --bg-dark: #222;
+  --text-light: #111;
+  --text-dark: #eee;
+  --primary: #2563eb;
+  --radius: 12px;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: var(--bg-light);
+  color: var(--text-light);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #2563eb; /* azul vibrante */
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Container dos links */
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 1.5rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Efeito de sublinhado animado */
+.navbar a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+.navbar a:hover {
+  color: #e0e0e0;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.navbar-links {
+  display: flex;
+}
+
+.home-container {
+  text-align: center;
+}
+.titulo-home {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  color: #2d3748;
+  margin-bottom: 2.5rem;
+}
+
+.descricao-home {
+  font-size: 1.125rem;
+  color: #4a5568;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+}
+
+.btn-home {
+  background-color: #2563eb;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-home:hover {
+  background-color: #1e40af;
+}
+
+.home {
+  padding: 2rem;
+}
+
+.grid-produtos {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (max-width: 480px) {
+  .grid-produtos {
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .grid-produtos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grid-produtos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1025px) {
+  .grid-produtos {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.img-placeholder {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #ddd;
+  border-radius: var(--radius);
+  margin-bottom: 0.5rem;
+}
+.titulo {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.preco {
+  font-weight: bold;
+  margin: 0.25rem 0;
+}
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: var(--primary);
+  color: white;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn:hover {
+  background: #1e40af;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out;
+}
